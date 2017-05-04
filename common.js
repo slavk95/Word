@@ -3,6 +3,8 @@ function tbl() {
 	num = document.getElementById("num").value,
 	tbl = document.getElementById("tbl");
 	var count = text.length - num;
+	var arr = text.split("");
+	
 	for (var i=0; i< num; i++){
 		var elemTr = document.createElement("tr");
 		tbl.appendChild(elemTr);
@@ -16,12 +18,15 @@ function tbl() {
 		// // alert(text.charAt(i))
 		// }
 	}
+	var j=0;
+	var newArr = arr.slice(num);
 	var elemNew = document.getElementsByTagName("tr");
-	for (var j=0; j< count; j++){
-			var lastText = document.createTextNode(text.charAt(3));
+	for (j=0; j< count; j++){
+			var lastText = document.createTextNode((newArr[j]));
 			elemNew[j].appendChild(elemTd.appendChild(lastText));
 			// elemNew[j].appendChild(elemTd);
 			// alert(text.charAt(3));
+			alert(newArr[j]);
 		}
 
 
