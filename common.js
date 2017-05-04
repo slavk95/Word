@@ -18,15 +18,26 @@ function tbl() {
 		// // alert(text.charAt(i))
 		// }
 	}
-	var j=0;
+	var j=0,k=-1;
 	var newArr = arr.slice(num);
-	var elemNew = document.getElementsByTagName("tr");
+	var lastElemTr = document.getElementsByTagName("tr");
 	for (j=0; j< count; j++){
-			var lastText = document.createTextNode((newArr[j]));
-			elemNew[j].appendChild(elemTd.appendChild(lastText));
+			k++;
+			if (lastElemTr[k] == undefined) {
+				k=0;
+			}
+			var lastElemTd = document.createElement("td");
+			lastElemTr[k].appendChild(lastElemTd);
+			var lastContent = document.createTextNode((newArr[j])); //перерив - е,р,и,в
+			lastElemTd.appendChild(lastContent);
+
+
+			//lastElemTr[j].appendChild(elemTd.appendChild(lastContent));
+			
 			// elemNew[j].appendChild(elemTd);
 			// alert(text.charAt(3));
-			alert(newArr[j]);
+			// alert(newArr[j]);
+			
 		}
 
 
